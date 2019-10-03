@@ -1,0 +1,78 @@
+﻿@model WebApplication2.Models.Employees
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <hr />
+    <h3>No of Leaves Available: @Html.DisplayFor(model => model.LeaveBalance)</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveBalance)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

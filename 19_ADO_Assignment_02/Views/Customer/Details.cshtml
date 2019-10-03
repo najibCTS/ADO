@@ -1,0 +1,52 @@
+﻿@model _19_ADO_Assignment_02.Models.Customer
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Custid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Custid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Custname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Custname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Custid  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

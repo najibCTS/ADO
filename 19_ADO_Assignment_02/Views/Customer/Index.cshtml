@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_19_ADO_Assignment_02.Models.Customer>
+
+<hr/>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<hr/>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Custid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Custid  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.Custid  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Custid  })
+        </td>
+    </tr>
+}
+
+</table>

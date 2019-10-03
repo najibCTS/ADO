@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebApplication2.Models.LeaveRequest>
+
+    <hr />
+    <p>
+        <h3>No of Employees leave Today: @Model.Where(a => (a.FromDate <= DateTime.Now && a.ToDate > DateTime.Now) && a.Status == "Approved").Count()</h3>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApproverId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("Edit", "EmployeeLeave", item, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                if (item.Status == "Pending approval")
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestorId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ToDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NoOfDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Reason)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ApproverId)
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Approve" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+        </table>
+
